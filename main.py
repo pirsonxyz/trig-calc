@@ -101,6 +101,7 @@ def main():
         table.add_row('4', 'Graficar un triangulo en base a sus coordenadas y calcular la distancia entre puntos.')
         table.add_row('5', 'Visualizar funciones trigonometricas en base a una amplitud o frecuencia.')
         table.add_row('6', 'Resolver ecuaciones cuadraticas.')
+        table.add_row('7', 'Calcular distancia en un paralelogramo con coordenadas(x,y).')
         table.add_row('Ctrl + c', 'Salir.',)
 
         console = Console()
@@ -206,6 +207,27 @@ def main():
                     if pp == 1:
                         print(f'x1 = {Fraction(x1).limit_denominator()}')
                         print(f'x2 = {Fraction(x2).limit_denominator()}')
+            case 7:
+                print('Introduce las coordenas para los vertices del cuadrado:')
+                vertices = ['A', 'B', 'C', 'D']
+                x_coords = []
+                y_coords = []
+
+                for vertex in vertices:
+                    x = float(input(f'Entra la coordenada x para {vertex}: '))
+                    y = float(input(f'Entra la coordenada y para {vertex}: '))
+                    x_coords.append(x)
+                    y_coords.append(y)
+
+                distance_AB = calculate_distance(x_coords[0], y_coords[0], x_coords[1], y_coords[1])
+                distance_DC = calculate_distance(x_coords[3], y_coords[3], x_coords[2], y_coords[2])
+                distance_BC = calculate_distance(x_coords[1], y_coords[1], x_coords[2], y_coords[2])
+                distance_AD = calculate_distance(x_coords[0], y_coords[0], x_coords[3], y_coords[3])
+
+                print(f'Distancia entre A y B: {distance_AB}')
+                print(f'Distancia entre D y C: {distance_DC}')
+                print(f'Distancia entre B y C: {distance_BC}')
+                print(f'Distancia entre A y D: {distance_AD} ')
             case _:
                 print('Opcion no valida!')
                 sleep_and_clear()
