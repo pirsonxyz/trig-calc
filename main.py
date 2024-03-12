@@ -250,6 +250,10 @@ def main():
                 print(f'Distancia entre B y C: {distance_BC}')
                 print(f'Distancia entre A y D: {distance_AD}')
 
+                if (distance_AB == distance_BC and distance_AD == distance_DC):
+                    area = distance_AB * distance_BC
+                    print(f'Area: {area}')
+
                 plot_sqrt(x_coords, y_coords)
             case _:
                 print('Opcion no valida!')
