@@ -71,6 +71,27 @@ def plot_triangle(x_coords, y_coords):
     
     plt.show()
 
+    
+def plot_sqrt(x_coords, y_coords):
+    x_coords.append(x_coords[0])
+    y_coords.append(y_coords[0])
+    plt.plot(x_coords, y_coords, 'b-')  
+    plt.xlabel('X')
+    plt.ylabel('Y')
+    plt.title('Paralelogramo ABCD')
+    plt.grid(True)
+    plt.gca().spines['left'].set_position('zero')
+    plt.gca().spines['bottom'].set_position('zero')
+    plt.gca().spines['right'].set_color('none')
+    plt.gca().spines['top'].set_color('none')
+    plt.axis('equal')
+    plt.axhline(0, color='black',linewidth=0.5)
+    plt.axvline(0, color='black',linewidth=0.5)
+    plt.xticks(range(int(min(x_coords))-1, int(max(x_coords))+2))
+    plt.yticks(range(int(min(y_coords))-1, int(max(y_coords))+2))
+    
+    plt.show()
+
 def sleep_and_clear():
 
     exit = input('Quieres reiniciar? (s/n): ')
@@ -227,7 +248,9 @@ def main():
                 print(f'Distancia entre A y B: {distance_AB}')
                 print(f'Distancia entre D y C: {distance_DC}')
                 print(f'Distancia entre B y C: {distance_BC}')
-                print(f'Distancia entre A y D: {distance_AD} ')
+                print(f'Distancia entre A y D: {distance_AD}')
+
+                plot_sqrt(x_coords, y_coords)
             case _:
                 print('Opcion no valida!')
                 sleep_and_clear()
