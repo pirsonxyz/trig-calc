@@ -1,3 +1,4 @@
+# A multipurpose calculator!
 import math
 from rich.prompt import Prompt
 from rich import print
