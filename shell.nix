@@ -10,4 +10,7 @@ in pkgs.mkShell {
       python-pkgs.pyqt5
     ]))
   ];
+  shellHook = ''
+    echo "Bienvenido a Trig Calc!"
+  '';
 }
